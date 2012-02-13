@@ -68,10 +68,8 @@ def distance_between((x1, y1), (x2, y2)):
 
 def get_heading((x1, y1), (x2, y2)):
     """Calculates the heading between the two points."""
-    angle = math.degrees(math.atan2(x1-x2, y1-y2)) - 90
-    if angle < 0:
-        angle += 360
-    return angle
+    angle = math.degrees(math.atan2(x1-x2, y1-y2)) + 90
+    return angle + 360 if angle < 0 else angle
 
 def get_frame(point, heading):
     """Fetches a single still for the given point and heading from the
